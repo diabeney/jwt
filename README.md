@@ -4,7 +4,7 @@ A minimal, RFC-compliant JWT (JSON Web Token) library written in Go. It supports
 
 ## Inspiration
 
-This project was inspired by [ThePrimeagen's Boot.dev tutorial](https://boot.dev) on implementing HTTP from scratch using the RFC specifications. As I'm learning Go, I decided to apply the same approach to implement a minimal version of JWT by following the [RFC 7519](https://tools.ietf.org/html/rfc7519) specification.
+This project was inspired by [ThePrimeagen's Boot.dev tutorial](https://www.youtube.com/watch?v=FknTw9bJsXM) on implementing HTTP from scratch using the RFC specifications. As I'm learning Go, I decided to apply the same approach to implement a minimal version of JWT by following the [RFC 7519](https://tools.ietf.org/html/rfc7519) specification.
 
 ## Features
 
