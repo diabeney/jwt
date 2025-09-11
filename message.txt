@@ -1,0 +1,13 @@
+This is the first line we are parsing.
+Second line we are parsing and I am intentionally making it long to check if everything clicks
+What if i add an emoji? 😊...ei, what if we add special unicode characters?
+ø ¥ † ®
+∑ œ ß ∂ 
+ƒ © ∆ µ 
+√ ç
+
+
+
+
+
+
