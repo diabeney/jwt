@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
-	"townn/jwt"
+	"github.com/diabeney/jwt/cmd/jwt"
 )
 func main() {
 	claims := jwt.Claims{
@@ -24,11 +24,12 @@ func main() {
 	fmt.Println("Generated token:")
 	fmt.Println(token)
 
-	verifiedClaims, err := jwt.Verify(token, secret)
+	obj, err := jwt.Decode("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJjbGllbnQtYXBwIiwiY2xpZW50IjoicnV2b28iLCJleHAiOjE3NTg3MTUzODAsImlhdCI6MTc1ODcxNDc4MCwiaXNzIjoiamVkIiwicm9sZSI6ImFkbWluIiwic3ViIjoicGVla2FibyJ9._m4tUlEGtECzOzuHmh0AQSR6d8Kr923myg2Jp97KY1M")
+
 	if err != nil {
-		fmt.Printf("Token verification failed: %v\n", err)
-		return
+		log.Fatalf("Failed to sign token: %v", err)
 	}
 
-	fmt.Printf("token is valid: %v", verifiedClaims)
+	fmt.Println("decoded token: ", obj)
+
 }

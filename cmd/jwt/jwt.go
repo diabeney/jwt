@@ -46,8 +46,7 @@ func parseToken(token string) (header, Claims, string, error) {
 	var h header
 	if err := json.Unmarshal(headerBytes, &h); err != nil {
 		return header{}, nil, "", fmt.Errorf("invalid header JSON: %w", err)
-	}
-
+}	
 	claimsBytes, err := decodeBase64URL(parts[1])
 	if err != nil {
 		return header{}, nil, "", fmt.Errorf("invalid claims encoding: %w", err)
@@ -105,6 +104,17 @@ func parseUnixTime(value interface{}) (time.Time, error) {
 	default:
 		return time.Time{}, errors.New("invalid time format")
 	}
+}
+
+
+func Decode(token string) (Claims, error) {
+	_, c, _, err := parseToken(token);
+
+	if err != nil {
+		return nil, errors.New("failed to parse token")
+	}
+
+	return c, nil
 }
 
 func Sign(claims Claims, secret string) (string, error) {
